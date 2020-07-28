@@ -6,8 +6,8 @@ namespace Pilas
     {
         static void Main(string[] args)
         {
-
-            Colas();
+            ColasCirculares();
+            //Colas();
             //Pilas();
         }
 
@@ -119,6 +119,17 @@ namespace Pilas
             }
         }
 
+        static void ColasCirculares()
+        {
+            ColasCirculares arreglo = new ColasCirculares(5);
+
+            arreglo.Agregar("Uno");
+            arreglo.Agregar("Dos");
+            arreglo.Agregar("Tres");
+            arreglo.Agregar("Cuatro");
+            arreglo.Agregar("Cinco");
+            arreglo.Agregar("Truena");
+        }
     }
     
 }
