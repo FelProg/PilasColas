@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Reflection.Metadata.Ecma335;
 
 namespace Pilas
 {
@@ -121,14 +122,28 @@ namespace Pilas
 
         static void ColasCirculares()
         {
+           
             ColasCirculares arreglo = new ColasCirculares(5);
+
+            arreglo.Eliminar();
 
             arreglo.Agregar("Uno");
             arreglo.Agregar("Dos");
             arreglo.Agregar("Tres");
             arreglo.Agregar("Cuatro");
             arreglo.Agregar("Cinco");
-            arreglo.Agregar("Truena");
+                
+            arreglo.Eliminar();
+            arreglo.Eliminar();
+
+            arreglo.Agregar("Seis");
+            arreglo.Agregar("Siete");
+            arreglo.Agregar("truena");
+
+            arreglo.Eliminar();
+            arreglo.Agregar("Si se pudo");
+
+            
         }
     }
     

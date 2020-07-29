@@ -43,29 +43,104 @@ namespace Pilas
                 if (final == max)
                 {
                     final = 0;
-                }
-
-                if (ValidaVacio())
-                {
-                    colacir[frente] = dato;
+                    colacir[final] = dato;
                 }
                 else
                 {
-                    final++;
-                    colacir[final] = dato;
+                    if (ValidaVacio())
+                    {
+                        colacir[frente] = dato;
+                    }
+                    else
+                    {
+                        final++;
+                        colacir[final] = dato;
+                    }
+
                 }
 
-                Console.WriteLine($"el dato[{colacir[final]}], " +
-                    $"esta en [{final}] en inicio [{frente}] esta [{colacir[frente]}]");
+                imprimir(dato, true);
+
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.Message);
-
+                Console.ForegroundColor = ConsoleColor.Yellow;
+                Console.WriteLine($"\n----------------------" +
+                   $"\n[{ex.Message}]" +
+                   $"\n----------------------");
+                Console.ResetColor();
             }
+            
         }
 
+        public void Eliminar()
+        {
+            try
+            {
+                if (ValidaVacio())
+                    throw new Exception("La cola circular está vacía");
 
 
+                colacir[frente] = null;
+
+                if (frente == final)
+                {
+                    frente = 0;
+                    final = 0;
+                }
+                else
+                {
+                    if (frente == max)
+                    {
+                        frente = 0;
+                    }
+                    else
+                    {
+                        frente++;
+                    }
+                }
+
+                imprimir(null, false, true);
+
+            }
+            catch (Exception ex)
+            {
+                Console.ForegroundColor = ConsoleColor.Yellow;
+                Console.WriteLine($"\n----------------------" +
+                   $"\n[{ex.Message}]" +
+                   $"\n----------------------");
+                Console.ResetColor();
+            }
+           
+           
+
+        }
+
+        private void imprimir(string dato, bool agregar = false, bool eliminar = false)
+        {
+            if (agregar)
+            {
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.WriteLine($"\n----------------------" +
+                   $"\nAgregando [{dato}]" +
+                   $"\n----------------------");
+               
+            }
+
+
+            if (eliminar)
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine($"\n----------------------" +
+                    $"\nEliminando {colacir[frente]}" +
+                    $"\n----------------------");
+            }
+
+            Console.ResetColor();
+
+
+            Console.WriteLine($"frente[{frente}]=[{colacir[frente]}], " +
+              $"final[{final}]=[{colacir[final]}]");
+        }
     }
 }
