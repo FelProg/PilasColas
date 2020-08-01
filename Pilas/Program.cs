@@ -7,8 +7,8 @@ namespace Pilas
     {
         static void Main(string[] args)
         {
-            ColasDobles();
-            //ColasCirculares();
+            //ColasDobles();
+            ColasCirculares();
             //Colas();
             //Pilas();
         }
@@ -126,12 +126,8 @@ namespace Pilas
            
             ColasCirculares arreglo = new ColasCirculares(5);
 
-            arreglo.Eliminar();
 
             arreglo.Agregar("Uno");
-            arreglo.Eliminar();
-            arreglo.Eliminar();
-            arreglo.Agregar("Uno de nuevo");
             arreglo.Agregar("Dos");
             arreglo.Agregar("Tres");
             arreglo.Agregar("Cuatro");
@@ -142,26 +138,46 @@ namespace Pilas
 
             arreglo.Agregar("Seis");
             arreglo.Agregar("Siete");
-            arreglo.Agregar("truena");
+            
 
-            arreglo.Eliminar();
-            arreglo.Agregar("Si se pudo");
+          
 
             
         }
 
         static void ColasDobles()
         {
-            ColasDobles arreglo = new ColasDobles(6);
+            ColasDobles arreglo = new ColasDobles(8);
 
-            arreglo.AgregarPorDer("Uno");
-            arreglo.AgregarPorDer("Dos");
-            arreglo.AgregarPorIzq("Tres");
-            arreglo.AgregarPorIzq("Cuatro");
-            arreglo.AgregarPorIzq("Cinco");
-            arreglo.AgregarPorIzq("Seis");
-            arreglo.AgregarPorDer("Truena");
-           
+            //arreglo.AgregarPorDer("1");
+            //arreglo.AgregarPorDer("1");
+            //arreglo.AgregarPorDer("1");
+            //arreglo.AgregarPorDer("1");
+            //arreglo.AgregarPorDer("1");
+
+            //arreglo.EliminarPorDer();
+            //arreglo.EliminarPorDer();
+            //arreglo.EliminarPorDer();
+            //arreglo.EliminarPorDer();
+
+            arreglo.AgregarPorIzq("1");
+            arreglo.AgregarPorIzq("1");
+            arreglo.AgregarPorIzq("1");
+            arreglo.AgregarPorIzq("1");
+
+            //arreglo.EliminarPorIzq();
+            //arreglo.EliminarPorIzq();
+            //arreglo.EliminarPorIzq();
+            arreglo.AgregarPorDer("2");
+            arreglo.AgregarPorDer("2");
+            arreglo.AgregarPorDer("2");
+            arreglo.AgregarPorDer("2");
+            
+          
+
+
+
+
         }
     }
     

@@ -80,27 +80,31 @@ namespace Pilas
                 if (ValidaVacio())
                     throw new Exception("La cola circular está vacía");
 
-
+                string dato = colacir[frente];
                 colacir[frente] = null;
+               
 
                 if (frente == final)
                 {
                     frente = 0;
                     final = 0;
+                    
                 }
                 else
                 {
                     if (frente == max)
                     {
                         frente = 0;
+                        
                     }
                     else
                     {
+                       
                         frente++;
                     }
                 }
+                imprimir(dato, false, true);
 
-                imprimir(null, false, true);
 
             }
             catch (Exception ex)
@@ -127,12 +131,11 @@ namespace Pilas
                
             }
 
-
             if (eliminar)
             {
                 Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine($"\n----------------------" +
-                    $"\nEliminando {colacir[frente]}" +
+                    $"\nEliminando {dato}" +
                     $"\n----------------------");
             }
 
@@ -141,6 +144,29 @@ namespace Pilas
 
             Console.WriteLine($"frente[{frente}]=[{colacir[frente]}], " +
               $"final[{final}]=[{colacir[final]}]");
+
+            foreach (string elem in colacir)
+            {
+                if (elem != null)
+                {
+                    if (elem == colacir[final] || elem == colacir[frente])
+                   
+                    {
+                        Console.ForegroundColor = ConsoleColor.Blue;
+                        Console.Write($"[{elem}] ");
+                        Console.ResetColor();
+                    }
+                    else
+                    {
+                        Console.Write($"[{elem}] ");
+                    }
+                }
+                else
+                {
+                    Console.Write($"[{elem}] ");
+                }
+
+            }
         }
     }
 }
