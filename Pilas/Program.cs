@@ -7,10 +7,32 @@ namespace Pilas
     {
         static void Main(string[] args)
         {
-            //ColasDobles();
-            ColasCirculares();
-            //Colas();
-            //Pilas();
+            ListasCirculares lista = new ListasCirculares();
+
+            lista.AgregarNodo("primero");
+            lista.AgregarNodo("segundo");
+            lista.AgregarNodo("tercero");
+            Console.WriteLine(lista.RecorrerLista());
+            lista.AgregarAlInicio("cero");
+            Console.WriteLine(lista.RecorrerLista());
+            lista.AgregarNodo("cuarto");
+            Console.WriteLine(lista.RecorrerLista());
+            Nodo  respuesta = lista.Buscar("tercero");
+            if(respuesta != null)
+            {
+                Console.WriteLine("Si se encontro");
+            }
+            else
+            {
+                Console.WriteLine("No se encontro");
+            }
+            Console.WriteLine($"el dato {lista.Eliminar("primero")} fue eliminado");
+            Console.WriteLine(lista.RecorrerLista());
+            Console.WriteLine($"el dato {lista.Eliminar("cero")} fue eliminado");
+            Console.WriteLine(lista.RecorrerLista());
+            lista.AgregarAlInicio("primero");
+            lista.AgregarAlInicio("cero");
+            Console.WriteLine(lista.RecorrerLista());
         }
 
         static void Pilas()
@@ -132,12 +154,15 @@ namespace Pilas
             arreglo.Agregar("Tres");
             arreglo.Agregar("Cuatro");
             arreglo.Agregar("Cinco");
+            arreglo.Agregar("truena");
                 
             arreglo.Eliminar();
             arreglo.Eliminar();
 
             arreglo.Agregar("Seis");
             arreglo.Agregar("Siete");
+
+            arreglo.Agregar("truena");
             
 
           
